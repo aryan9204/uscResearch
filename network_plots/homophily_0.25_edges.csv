@@ -1,0 +1,17 @@
+source,target,source_name,target_name,source_opinion,target_opinion,source_group,target_group
+0,1,John Smith,Mary Johnson,2,0,1,0
+0,2,John Smith,Robert Williams,2,-2,1,-1
+0,3,John Smith,Patricia Brown,2,2,1,1
+0,5,John Smith,Linda Garcia,2,-2,1,-1
+0,7,John Smith,Barbara Davis,2,0,1,0
+0,9,John Smith,Elizabeth Martinez,2,2,1,1
+1,3,Mary Johnson,Patricia Brown,0,2,0,1
+1,4,Mary Johnson,Michael Jones,0,0,0,0
+1,6,Mary Johnson,William Miller,0,2,0,1
+1,7,Mary Johnson,Barbara Davis,0,0,0,0
+1,8,Mary Johnson,James Rodriguez,0,2,0,1
+2,4,Robert Williams,Michael Jones,-2,0,-1,0
+3,8,Patricia Brown,James Rodriguez,2,2,1,1
+4,5,Michael Jones,Linda Garcia,0,-2,0,-1
+4,6,Michael Jones,William Miller,0,2,0,1
+6,9,William Miller,Elizabeth Martinez,2,2,1,1
