@@ -3,11 +3,11 @@ import random
 import numpy as np
 import pandas as pd
 import autogen
-from agent_v3 import args, AGENT_LIST, TOPIC, MEMORY_OUTPUT_PATH, NETWORK_PATH
+from agent_v3 import args, AGENT_LIST, TOPIC, MEMORY_OUTPUT_PATH, SIMULATION_OUTPUT_PATH, NETWORK_PATH
 import re
 
-
 network_df = pd.read_csv(NETWORK_PATH)
+
 
 
 NEIGHBOR_MAP = {}
@@ -81,7 +81,7 @@ def generate_simulation(n_step, memory):
             user_proxy = USER_PROXIES[agent.name]
             neighbors = NEIGHBOR_MAP.get(agent.name, set())
             recent_neighbor_msgs = memory_df[
-                # (memory_df["Iteration"].between(i - 5, i - 1))
+                #(memory_df["Iteration"].between(i - 5, i - 1))
                 (memory_df["Iteration"].between(i - 5, i - 1)) &
                 (memory_df["Agent Name"].isin(neighbors))
             ]
@@ -126,15 +126,15 @@ def generate_simulation(n_step, memory):
                 if match:
                     majority_value = int(match.group())
                     if majority_value < -2 or majority_value > 2:
-                        majority_value = -2
+                        majority_value = 0
                         fails += 1
                 else:
                     print(f"Could not parse majority opinion from:\n{majority_response}")
-                    majority_value = -2
+                    majority_value = 0
                     fails += 1
             except Exception:
                 print(f"Could not parse majority opinion from:\n{majority_response}")
-                majority_value = -2
+                majority_value = 0
                 fails += 1
 
             # # Opinion change prompt
@@ -258,18 +258,20 @@ def generate_simulation(n_step, memory):
                 trajectories[agent.name] = [(f"s={abs(majority_value - agent.Opinion)}", f"a={action}")]
             else:
                 trajectories[agent.name].append((f"s={abs(majority_value - agent.Opinion)}", f"a={action}"))
-            
-        
-        with open("outputOneHomophily.txt", "w") as f:
-            for key, value in trajectories.items():
-                f.write(f"{key}: {value}\n")
 
         pd.DataFrame(memory).to_csv(MEMORY_OUTPUT_PATH, index=False)
-    print(fails)
+    
+    with open(SIMULATION_OUTPUT_PATH, "a") as f:
+        for key, value in trajectories.items():
+            f.write(f"{key}: {value}\n")
 
     return memory
 
 
+
 if __name__ == "__main__":
-    initial_memory = generate_initial_opinion()
-    generate_simulation(10, initial_memory)
+    for i in range(10):
+        with open(SIMULATION_OUTPUT_PATH, "a") as f:
+            f.write(f"RUN {i + 1}\n")
+        initial_memory = generate_initial_opinion()
+        generate_simulation(10, initial_memory)

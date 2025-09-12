@@ -11,21 +11,27 @@ def parse_args():
     parser.add_argument("--topic", type=str, required=True, help="Topic to discuss (e.g., immigration)")
     parser.add_argument("--sample_support_strong", type=int, default=22)
     parser.add_argument("--sample_support_slight", type=int, default=23)
+    # parser.add_argument("--sample_support_strong", type=int, default=11)
+    # parser.add_argument("--sample_support_slight", type=int, default=12)
     parser.add_argument("--sample_neutral", type=int, default=23)
-    parser.add_argument("--sample_against_slight", type=int, default=23)
-    parser.add_argument("--sample_against_strong", type=int, default=23)
+    # parser.add_argument("--sample_against_slight", type=int, default=23)
+    # parser.add_argument("--sample_against_strong", type=int, default=23)
+    parser.add_argument("--sample_against_slight", type=int, default=12)
+    parser.add_argument("--sample_against_strong", type=int, default=11)
     parser.add_argument("--memory_output_path", type=str, default="v3_all_immigration_0415.csv")
     parser.add_argument("--network_path", type=str, required=True, help="Path to the network edges CSV file")
+    parser.add_argument("--output-path", type=str, required=True, help="Path to save the simulation trajectories")
     return parser.parse_args()
 
 args = parse_args()
 
-PERSONA = pd.read_csv("persona_sample.csv")
+PERSONA = pd.read_csv("persona_5point.csv")
 TOPIC = args.topic
 MEMORY_OUTPUT_PATH = args.memory_output_path
 NETWORK_PATH = args.network_path  # Now importable by other modules
 AGENT_LIST = []
 MEMORY = []
+SIMULATION_OUTPUT_PATH = args.output_path
 
 sample_sizes = {
     2: args.sample_support_strong,

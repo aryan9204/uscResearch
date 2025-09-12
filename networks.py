@@ -20,7 +20,19 @@ def get_preferred_candidates(G, u, homophily_level):
     if opinion_u == 0:
         return []
 
-    if homophily_level >= 0:
+    if homophily_level == -1.0:
+        return [
+            n for n in G.nodes
+            if n != u and not G.has_edge(u, n)
+            and G.nodes[n]['opinion'] == -opinion_u  # exact opposite
+        ]
+    elif homophily_level == 1.0:
+        return [
+            n for n in G.nodes
+            if n != u and not G.has_edge(u, n)
+            and G.nodes[n]['opinion'] == opinion_u  # exact same
+        ]
+    elif homophily_level >= 0:
         return [
             n for n in G.nodes
             if n != u and not G.has_edge(u, n)
@@ -37,39 +49,61 @@ def create_homophilic_network(nodes_df, m=2, homophily_level=0.0, seed=42):
     random.seed(seed)
     np.random.seed(seed)
     n = len(nodes_df)
-    G = nx.barabasi_albert_graph(n=n, m=m, seed=seed)
+    # G = nx.barabasi_albert_graph(n=n, m=m, seed=seed)
+    G = nx.empty_graph(n=n)
 
     for _, row in nodes_df.iterrows():
         G.nodes[row['ID']]['name'] = row['Name']
         G.nodes[row['ID']]['opinion'] = row['Opinion']
         G.nodes[row['ID']]['group'] = opinion_group(row['Opinion'])
 
-    for u, v in list(G.edges()):
-        opinion_u = G.nodes[u]['opinion']
-        opinion_v = G.nodes[v]['opinion']
+    # for u, v in list(G.edges()):
+    #     opinion_u = G.nodes[u]['opinion']
+    #     opinion_v = G.nodes[v]['opinion']
 
-        # Determine if they are from same "side" of opinion
-        same_sign = np.sign(opinion_u) == np.sign(opinion_v) and opinion_u != 0 and opinion_v != 0
+    #     # Determine if they are from same "side" of opinion
+    #     same_sign = np.sign(opinion_u) == np.sign(opinion_v) and opinion_u != 0 and opinion_v != 0
 
-        if homophily_level >= 0:
-            prob_keep = homophily_level * int(same_sign) + (1 - homophily_level)
-        else:
-            prob_keep = -homophily_level * int(not same_sign) + (1 + homophily_level)
+    #     if homophily_level >= 0:
+    #         prob_keep = homophily_level * int(same_sign) + (1 - homophily_level)
+    #     else:
+    #         prob_keep = -homophily_level * int(not same_sign) + (1 + homophily_level)
 
-        if random.random() > prob_keep:
-            candidates = get_preferred_candidates(G, u, homophily_level)
-            if candidates:
-                new_v = random.choice(candidates)
-                G.remove_edge(u, v)
-                G.add_edge(u, new_v)
-
+    #     if random.random() > prob_keep:
+    #         G.remove_edge(u, v)
+    #         candidates = get_preferred_candidates(G, u, homophily_level)
+    #         if candidates:
+    #             new_v = random.choice(candidates)
+    #             G.add_edge(u, new_v)
+    if homophily_level == 1.0:
+        for i in range(n):
+            for j in range(i+1, n):
+                if nodes_df.loc[i, 'Opinion'] == nodes_df.loc[j, 'Opinion']:
+                    G.add_edge(i, j)
+    elif homophily_level == 0.0:
+        for i in range(n):
+            if nodes_df.loc[i, 'Opinion'] == 0:
+                positive_nodes = nodes_df[nodes_df['Opinion'] > 0].index.tolist()
+                negative_nodes = nodes_df[nodes_df['Opinion'] < 0].index.tolist()
+                chosen_positive = random.sample(positive_nodes, min(11, len(positive_nodes)))
+                chosen_negative = random.sample(negative_nodes, min(11, len(negative_nodes)))
+                for j in chosen_positive + chosen_negative:
+                    G.add_edge(i, j)
+            else:
+                for j in range(i+1, n):
+                    if nodes_df.loc[i, 'Opinion'] == -nodes_df.loc[j, 'Opinion']:
+                        G.add_edge(i, j)
+    else:
+        #TODO
+        print("Homophily levels other than 0.0 and 1.0 are not implemented yet.")
     return G
 
 
-df = pd.read_csv('persona_sample.csv')
+df = pd.read_csv('persona_5point.csv')
 nodes = df[['Name', 'Opinion']].copy()
 nodes['ID'] = range(len(nodes))
-homophily_levels = [-1.0, -0.75, -0.5, -0.25,  0.0, 0.25, 0.5, 0.75, 1.0]
+#homophily_levels = [-1.0, -0.75, -0.5, -0.25,  0.0, 0.25, 0.5, 0.75, 1.0]
+homophily_levels = [0.0, 0.5, 1.0]
 networks = {h: create_homophilic_network(nodes, homophily_level=h) for h in homophily_levels}
 
 output_dir = "network_plots"

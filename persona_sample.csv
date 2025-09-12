@@ -1,11 +1,115 @@
 Name,Gender,Political Ideology,Education,Race,Opinion,Willingness
-John Smith,Male,Moderate,Bachelor's,White,2,5
-Mary Johnson,Female,Liberal,Master's,Black,0,5
-Robert Williams,Male,Conservative,High School,White,-2,5
-Patricia Brown,Female,Conservative,Some College,Hispanic,2,5
-Michael Jones,Male,Moderate,Bachelor's,White,0,5
-Linda Garcia,Female,Liberal,Bachelor's,Hispanic,-2,5
-William Miller,Male,Conservative,Some College,White,2,5
+John Smith,Male,Moderate,Bachelor's,White,-2,7
+Mary Johnson,Female,Liberal,Master's,Black,-1,7
+Robert Williams,Male,Conservative,High School,White,0,5
+Patricia Brown,Female,Conservative,Some College,Hispanic,1,3
+Michael Jones,Male,Moderate,Bachelor's,White,2,3
+Linda Garcia,Female,Liberal,Bachelor's,Hispanic,-2,7
+William Miller,Male,Conservative,Some College,White,-1,7
 Barbara Davis,Female,Liberal,Master's,Black,0,5
-James Rodriguez,Male,Moderate,Bachelor's,Hispanic,2,5
-Elizabeth Martinez,Female,Liberal,Master's,Hispanic,2,5
+James Rodriguez,Male,Moderate,Bachelor's,Hispanic,1,3
+Elizabeth Martinez,Female,Liberal,Master's,Hispanic,2,3
+David Hernandez,Male,Conservative,High School,Hispanic,-2,7
+Jennifer Lopez,Female,Liberal,Bachelor's,Hispanic,-1,7
+Richard Wilson,Male,Moderate,Some College,White,0,5
+Susan Anderson,Female,Liberal,Master's,Black,1,3
+Joseph Thomas,Male,Conservative,High School,White,2,3
+Margaret Taylor,Female,Moderate,Bachelor's,White,-2,7
+Charles Moore,Male,Conservative,Some College,White,-1,7
+Dorothy Jackson,Female,Liberal,Master's,Black,0,5
+Christopher Martin,Male,Moderate,Bachelor's,White,1,3
+Lisa Lee,Female,Liberal,Bachelor's,Asian,2,3
+Daniel Perez,Male,Conservative,High School,Hispanic,-2,7
+Nancy White,Female,Moderate,Some College,White,-1,7
+Matthew Harris,Male,Liberal,Bachelor's,White,0,5
+Karen Sanchez,Female,Liberal,Master's,Hispanic,1,3
+Anthony Clark,Male,Moderate,Bachelor's,White,2,3
+Betty Ramirez,Female,Conservative,High School,Hispanic,-2,7
+Mark Lewis,Male,Moderate,Some College,White,-1,7
+Helen Robinson,Female,Conservative,Bachelor's,White,0,5
+Steven Walker,Male,Liberal,Bachelor's,White,1,3
+Sandra Young,Female,Liberal,Master's,Black,2,3
+Paul Allen,Male,Moderate,Bachelor's,White,-2,7
+Donna King,Female,Conservative,Some College,White,-1,7
+Andrew Wright,Male,Liberal,Bachelor's,Asian,0,5
+Carol Scott,Female,Moderate,High School,White,1,3
+Kevin Torres,Male,Conservative,Some College,Hispanic,2,3
+Ruth Nguyen,Female,Liberal,Master's,Asian,-2,7
+Brian Hill,Male,Moderate,Bachelor's,White,-1,7
+Sharon Flores,Female,Conservative,High School,Hispanic,0,5
+Edward Green,Male,Moderate,Some College,White,1,3
+Cynthia Adams,Female,Conservative,Bachelor's,White,2,3
+Jason Nelson,Male,Liberal,Bachelor's,White,-2,7
+Amy Baker,Female,Moderate,Master's,White,-1,7
+Jeffrey Hall,Male,Conservative,Some College,White,0,5
+Angela Rivera,Female,Liberal,Bachelor's,Hispanic,1,3
+Jacob Campbell,Male,Moderate,Bachelor's,White,2,3
+Melissa Mitchell,Female,Liberal,Some College,Black,-2,7
+Ryan Carter,Male,Moderate,High School,White,-1,7
+Emma Roberts,Female,Liberal,Master's,White,0,5
+Gary Phillips,Male,Conservative,Bachelor's,White,1,3
+Stephanie Evans,Female,Moderate,Some College,Black,2,3
+Nicholas Turner,Male,Liberal,Bachelor's,White,-2,7
+Rebecca Torres,Female,Conservative,High School,Hispanic,-1,7
+Frank Parker,Male,Moderate,Some College,White,0,5
+Janet Edwards,Female,Liberal,Master's,Black,1,3
+Scott Collins,Male,Moderate,Bachelor's,White,2,3
+Rachel Stewart,Female,Liberal,Bachelor's,White,-2,7
+Brandon Sanchez,Male,Conservative,Some College,Hispanic,-1,7
+Laura Morris,Female,Moderate,High School,White,0,5
+Benjamin Rogers,Male,Liberal,Bachelor's,White,1,3
+Megan Reed,Female,Liberal,Master's,White,2,3
+Aaron Cook,Male,Moderate,Some College,White,-2,7
+Olivia Morgan,Female,Conservative,Bachelor's,Hispanic,-1,7
+Adam Bell,Male,Moderate,High School,White,0,5
+Cheryl Murphy,Female,Conservative,Some College,Black,1,3
+Zachary Bailey,Male,Liberal,Bachelor's,White,2,3
+Katherine Rivera,Female,Moderate,Master's,Hispanic,-2,7
+Patrick Cooper,Male,Conservative,Some College,White,-1,7
+Diane Richardson,Female,Liberal,Bachelor's,White,0,5
+Shane Cox,Male,Moderate,Bachelor's,White,1,3
+Theresa Howard,Female,Liberal,Master's,Black,2,3
+Bryan Ward,Male,Moderate,Some College,White,-2,7
+Janice Brooks,Female,Conservative,Bachelor's,White,-1,7
+Samuel Kelly,Male,Liberal,Bachelor's,White,0,5
+Alice Sanders,Female,Moderate,High School,White,1,3
+Derek Price,Male,Conservative,Some College,White,2,3
+Victoria Bennett,Female,Liberal,Bachelor's,Black,-2,7
+Jordan Wood,Non-binary,Moderate,Bachelor's,White,-1,7
+Casey Barnes,Non-binary,Liberal,Some College,White,0,5
+Jamie Ross,Non-binary,Moderate,Master's,White,1,3
+Morgan Henderson,Non-binary,Conservative,High School,Hispanic,2,3
+Robin Coleman,Non-binary,Moderate,Bachelor's,White,-2,7
+AJenkins,Non-binary,Liberal,Bachelor's,Asian,-1,7
+Quinn Perry,Non-binary,Moderate,Some College,White,0,5
+Riley Powell,Non-binary,Conservative,Bachelor's,White,1,3
+Alex Patterson,Non-binary,Moderate,Master's,White,2,3
+Taylor Hughes,Non-binary,Liberal,Bachelor's,White,-2,7
+Ethan Flores,Male,Moderate,Bachelor's,White,-1,7
+Samantha Butler,Female,Liberal,Some College,Black,0,5
+Caleb Simmons,Male,Conservative,High School,White,1,3
+Alyssa Foster,Female,Moderate,Bachelor's,White,2,3
+Dylan Bryant,Male,Liberal,Some College,White,-2,7
+Jasmine Alexander,Female,Liberal,Master's,Hispanic,-1,7
+Connor Russell,Male,Moderate,Bachelor's,White,0,5
+Sierra Griffin,Female,Conservative,High School,White,1,3
+Luke Diaz,Male,Moderate,Some College,White,2,3
+Hailey Myers,Female,Liberal,Bachelor's,White,-2,7
+Owen Ford,Male,Conservative,Bachelor's,White,-1,7
+Isabella Hamilton,Female,Moderate,Master's,Hispanic,0,5
+Carter Graham,Male,Liberal,Bachelor's,White,1,3
+Mia Sullivan,Female,Conservative,Some College,White,2,3
+Wyatt Wallace,Male,Moderate,Bachelor's,White,-2,7
+Eva West,Female,Liberal,Master's,Asian,-1,7
+Julian Cole,Male,Moderate,High School,White,0,5
+Naomi Jordan,Female,Liberal,Bachelor's,Black,1,3
+Isaac Hayes,Male,Conservative,Some College,White,2,3
+Lily Ford,Female,Moderate,Master's,White,-2,7
+Gabriel Simmons,Male,Liberal,Bachelor's,White,-1,7
+Madison Bryant,Female,Conservative,High School,Hispanic,0,5
+Aaron Russell,Male,Moderate,Some College,White,1,3
+Sofia Griffin,Female,Liberal,Bachelor's,Hispanic,2,3
+Julian Barnes,Male,Moderate,Bachelor's,White,-2,7
+Aubrey Price,Female,Liberal,Master's,Black,-1,7
+Miles Jenkins,Male,Conservative,High School,White,0,5
+Caroline Patterson,Female,Moderate,Some College,White,1,3
