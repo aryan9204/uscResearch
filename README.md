@@ -1,0 +1,3 @@
+## USC LLM+IRL Research ##
+
+This is the GitHub containing all of the results for various experiments for the Spiral of Silence project. In trajectories/tenRuns, you can find all of the trajectory files for the experiments. Files named biasWillingnessAgainst mean that the willingness to speak was biased to support agents with a negative opinion (opinion of -1 or -2). The opposite is true for files named biasWillingnessSupport. Files named allUsersAgainst mean that fewer supporting agents (opinion of 1 or 2) were sampled, yielding a majority for the against agents. The opposite is true for files named allUsersSupport. Files named noBias mean that all agents were sampled with equal willingness to speak.
